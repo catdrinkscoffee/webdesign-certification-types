@@ -293,14 +293,14 @@ footer .footer-group .sns {
 }
 footer .footer-group .sns>a {
     display: block;
-    width: 125px;
+    width: 150px;
     padding: 5px 8px;
     border: 1px solid;
 }
 footer .footer-group .family-site {
     position: absolute;
     top: -7.5px;
-    width: 125px;
+    width: 150px;
     border: 1px solid;
     background: #fff;
 }
