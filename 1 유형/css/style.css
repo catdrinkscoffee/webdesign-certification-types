@@ -1,0 +1,312 @@
+/* COMMON */
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 1200px;
+    height: 700px;
+    margin: 0 auto;
+    border: 1px solid;
+}
+.body_container {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+a {
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* DISPLAY BLOCK & NONE */
+.d-block * {
+    display: block !important;
+}
+.d-none * {
+    display: none !important;
+}
+
+/* FLOAT CLEARFIX */
+.float--left {
+    float: left;
+}
+.float--right {
+    float: right;
+}
+.cleafix {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* VERTICAL CENTER */
+.vertical-center {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* SECTION */
+.section * {
+    position: relative;
+}
+
+/* POSITION ABSOLUTE */
+.p-ab {
+    position: absolute !important;
+}
+
+/* HEADER */
+header { } /* 작성하지 않더라도 비워두는 습관! */
+header .inner {
+    height: 100px;
+}
+header .logo a {
+    background: url("../images/logo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 100px;
+    display: block;
+    text-indent: -9999px; /* 대체 텍스트 */    
+}
+header .menus {
+    margin-right: 20px;
+}
+header .menus li {
+    width: 120px;
+    height: 50px;
+}
+header .menus li a {
+    display: block;
+    height: 100%;
+    line-height: 50px;
+    padding: 0 15px;
+}
+header .submenu-group {
+    background: #fff;
+    /* box-shadow: 0px 8px 16px rgba(0,0,0,0.2); */
+    display: none;
+    z-index: 1;
+}
+header .menu-group>li:hover .submenu-group {
+    display: block;
+}
+
+
+/* 경계선 표시를 위한 코드 */
+header .inner {
+    border-bottom: 1px solid;
+}
+header .logo {
+    border-right: 1px solid;
+}
+header .submenu-group {
+    border: 1px solid;
+    margin:  0 -1px -1px -1px;
+}
+header .menu-group>li {
+    border: 1px solid;
+}
+header .menu-group>li:nth-child(2) {
+    border-left: 0;
+}
+header .menu-group>li:nth-child(3) {
+    border-left: 0;
+}
+header .menu-group>li:nth-child(4) {
+    border-left: 0;
+}
+
+/* SLIDE */
+.section--slide {
+    overflow: hidden;
+}
+.section--slide .inner {
+    height: 300px;
+}
+.section--slide .slide {
+    z-index: -1;
+}
+
+/* 경계선 표시를 위한 코드 */
+.section--slide .inner {
+    border-bottom: 1px solid;
+}
+.section--slide .inner a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* CONTENTS */
+.section--contents { }
+.section--contents .inner {
+    height: 200px;
+}
+.section--contents .contents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+}
+.section--contents .contents .titles {
+    height: 50px;
+    margin-left: 10px;
+    line-height: 50px;
+}
+.section--contents .contents .titles .category a{
+    padding: 0 15px;
+}
+.section--contents .contents .detail {
+    height: 150px;
+}
+.section--contents .contents .detail .notice {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 150px;
+}
+.section--contents .contents .detail .notice-row {
+    border-bottom: 1px solid;
+}
+.section--contents .contents .detail .notice-row a {
+    text-align: left;
+    text-indent: 10px;
+}
+.section--contents .contents .detail .gallery {
+    display: flex;
+    justify-content: space-around;
+}
+.section--contents .contents .detail .gallery img {
+    width: 30%;
+    height: auto;
+}
+.section--contents .contents .banner a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/banner.jpg");
+    background-size: contain;
+    text-indent: -9999px;
+}
+.section--contents .contents .direct a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/direct.jpg");
+    background-size: contain;
+    text-indent: -9999px;
+}
+
+
+/* 경계선 표시를 위한 코드 */
+.section--contents .inner {
+    border-bottom: 1px solid;
+}
+.section--contents .contents .titles {
+    border-left: 1px solid;
+}
+.section--contents .contents .titles .category {
+    display: block;
+    height: 100%;
+    border-right: 1px solid;
+}
+.section--contents .contents .detail {
+    margin-top: -1px;
+    height: 148px;
+    border-top: 1px solid;
+}
+.section--contents .contents>div:nth-child(1) {
+    border-right: 1px solid;
+}
+.section--contents .contents>div:nth-child(2) {
+    border-right: 1px solid;
+}
+
+/* FOOTER */
+footer {}
+footer .inner {
+    height: 99px;
+}
+footer .footer-group {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    height: 100%;
+}
+footer .footer-group .f-logo a {
+    background: url("../images/logo.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 99px;
+    display: block;
+    text-indent: -9999px; /* 대체 텍스트 */   
+}
+footer .footer-group .copyright {
+    display: flex;
+    justify-content: center;
+}
+footer .footer-group .sns {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 경계선 표시를 위한 코드 */
+footer .footer-group .f-logo {
+    border-right: 1px solid;
+}
+footer .footer-group .copyright {
+    border-right: 1px solid;  
+}
+
+
+/* MODAL */
+.section--modal {
+    width: 1200px;
+    height: 700px;
+    background: rgba(0, 0, 0, .7);
+    z-index: 100;
+    justify-content: center;
+}
+.section--modal .modal-contents {
+    width: 600px;
+    height: 350px;
+    background: #fff;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 15px 0;
+}
+.section--modal .modal-contents .modal-footer {
+    height: 50px;
+    margin: 0 -15px;
+    padding: 8px 15px;
+    background: lightgray;
+    justify-content: end;
+}
+.section--modal .modal-contents .modal-footer a {
+    display: block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: gray;
+    cursor: pointer;
+}
