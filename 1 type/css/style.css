@@ -102,7 +102,7 @@ header .submenu-group {
     display: none;
     z-index: 1;
 }
-header .menu-group>li:hover .submenu-group {
+header .menu-group:hover .submenu-group {
     display: block;
 }
 
