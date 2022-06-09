@@ -149,6 +149,7 @@ header .menu-group>li:nth-child(5) {
     overflow: hidden;
 }
 .section--slide .inner {
+    width: 3600px;
     height: 300px;
 }
 .section--slide .img-box {
@@ -156,6 +157,10 @@ header .menu-group>li:nth-child(5) {
 }
 .section--slide .slide {
     z-index: -1;
+}
+.section--slide img {
+    width: 1200px;
+    float: left;
 }
 
 /* 경계선 표시를 위한 코드 */
