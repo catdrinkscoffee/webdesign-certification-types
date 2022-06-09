@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>강원천문대</title>
+    <title>대한투어</title>
 
     <meta name="author" content="이주헌">
-    <meta name="description" content="호기심을 키워주고 관측체험과 만들기 활동을 할 수 있는 강원천문대 홍보 웹사이트">
-
+    <meta name="description" content="좋은 품질의 여행 상품을 소개하고 판매하여 매출을 올릴 수 있는 대한투어 웹사이트">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
@@ -14,6 +14,10 @@
 </head>
 <body>
     <div class="body_container">
+
+        <div class="header-bg" style="position: fixed; top: 0px; left: calc(600px - 50vw); height: 101px; border-top: 1px solid; border-bottom: 1px solid; width: 200vw;"></div>
+        <div class="footer-bg" style="position: fixed; top: 600.5px; left: calc(600px - 50vw); height: 99.5px; border-top: 1px solid; border-bottom: 1px solid; width: 200vw;"></div>
+        
         <!-- modal -->
         <section class="section section--modal p-ab vertical-center">
             <div class="modal-contents">
@@ -33,7 +37,6 @@
                 </div>
             </div>
         </section>
-
         <!-- header -->
         <header class="section">
             <div class="inner cleafix">
@@ -42,36 +45,38 @@
                 </div>
                 <div class="menus vertical-center float--right">
                     <ul class="menu-group vertical-center">
+                        <div class="nav-bg"></div>
                         <li>
-                            <a class="menu" href="#">강원천문대</a>
+                            <a class="menu" href="#">해외여행</a>
                             <ul class="submenu-group">
-                                <li><a href="">천문대소개</a></li>
-                                <li><a href="">인사말</a></li>
-                                <li><a href="">오시는길</a></li>
+                                <li><a href="">동남아/대만</a></li>
+                                <li><a href="">중국/홍콩</a></li>
+                                <li><a href="">유럽/두바이</a></li>
+                                <li><a href="">미주/하와이</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="menu" href="#">이용안내</a>
+                            <a class="menu" href="#">국내여행</a>
                             <ul class="submenu-group">
-                                <li><a href="">프로그램</a></li>
-                                <li><a href="">관람시간표</a></li>
-                                <li><a href="">이달의 별자리</a></li>
+                                <li><a href="">서울/경기권</a></li>
+                                <li><a href="">충청권</a></li>
+                                <li><a href="">전라권</a></li>
+                                <li><a href="">경상/강원권</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="menu" href="#">천문대예약</a>
+                            <a class="menu" href="#">제주도</a>
                             <ul class="submenu-group">
-                                <li><a href="">예약하기</a></li>
-                                <li><a href="">예약확인</a></li>
-                                <li><a href="">예약취소</a></li>
+                                <li><a href="">버스여행</a></li>
+                                <li><a href="">자유여행</a></li>
+                                <li><a href="">호텔/펜션</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="menu" href="#">커뮤니티</a>
+                            <a class="menu" href="#">렌터카</a>
                             <ul class="submenu-group">
-                                <li><a href="">공지사항</a></li>
-                                <li><a href="">방문후기</a></li>
-                                <li><a href="">자유게시판</a></li>
+                                <li><a href="">국내 렌터카</a></li>
+                                <li><a href="">국외 렌터카</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -94,10 +99,9 @@
         <section class="section section--contents">
             <div class="inner">
                 <div class="contents">
-                    <div class="notice-and-gallery">
+                    <div class="notice">
                         <ul class="titles vertical-center">
                             <li class="note category active"><a href="#">공지사항</a></li>
-                            <li class="gal category deactive"><a href="#">갤러리</a></li>
                         </ul>
                         <div class="detail">
                             <div class="notice p-ab d-block">
@@ -106,7 +110,14 @@
                                 <div class="notice-row deactive"><a href="#">notice 3</a></div>
                                 <div class="notice-row deactive"><a href="#">notice 4</a></div>
                             </div>
-                            <div class="gallery p-ab vertical-center d-none">
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <ul class="titles vertical-center">
+                            <li class="gal category deactive"><a href="#">갤러리</a></li>
+                        </ul>
+                        <div class="detail">
+                            <div class="gallery p-ab vertical-center">
                                 <img src="images/gallery.jpg" alt="갤러리 사진">
                                 <img src="images/gallery.jpg" alt="갤러리 사진">
                                 <img src="images/gallery.jpg" alt="갤러리 사진">
@@ -114,9 +125,6 @@
                         </div>
                     </div>
                     <div class="banner">
-                        <a href="#">배너 이미지</a>
-                    </div>
-                    <div class="direct">
                         <a href="#">바로가기 이미지</a>
                     </div>
                 </div>
@@ -127,19 +135,29 @@
         <footer class="section">
             <div class="inner">
                 <div class="footer-group">
-                    <div class="f-logo">
-                        <a href="#">푸터 로고 이미지</a>
+                    <div class="copyright vertical-center">
+                        Copyright
                     </div>
-                    <div class="cite-info">
-                        <ul class="vertical-center">
-                            <li><a href="#">하단 메뉴</a></li>
-                            <li><a href="#">하단 메뉴</a></li>
-                            <li><a href="#">하단 메뉴</a></li>
-                            <li><a href="#">하단 메뉴</a></li>
-                        </ul>
-                        <div class="copyright">
-                            <p>Copyrigt... all right reserved</p>
+                    <div class="sns vertical-center">
+                        <div class="snsicons"">
+                            <a href="#">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                            </a>
                         </div>
+                        <a href="#">
+                            <i class="fa-regular fa-square-caret-up"></i>
+                            패밀리 사이트
+                            <ul class="family-site">
+                                <li><a href="#">사이트</a></li>
+                                <li><a href="#">사이트</a></li>
+                            </ul>
+                        </a> 
                     </div>
                 </div>
             </div>
