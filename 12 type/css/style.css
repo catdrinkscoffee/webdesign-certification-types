@@ -133,7 +133,7 @@ header .logo {
 }
 header .submenu-group {
     border: 1px solid;
-    margin:  0 -1px -1px -1px;
+    margin:  -1px -1px -1px 0;
 }
 header .menu-group>li {
     border: 1px solid;
