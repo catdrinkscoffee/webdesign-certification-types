@@ -5,7 +5,7 @@
 document.getElementById('root');
 ```
 ```javascript
-document.getElementById('root').innerHTML = '<ul><li>바꾸었다</li></ul>';
+document.getElementById('root').innerHTML = '<ul><li>변경 후 li 태그</li></ul>';
 ```
 app.js 에서 편집하기
 ```javascript
