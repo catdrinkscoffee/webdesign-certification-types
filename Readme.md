@@ -1,5 +1,5 @@
 
-= 개발자 도구에서 편집하기 (Edit as HTML, Console)
+= 개발자 도구에서 편집하기 (Edit as HTML, Console) =
 
 ```javascript
 document.getElementById('root');
