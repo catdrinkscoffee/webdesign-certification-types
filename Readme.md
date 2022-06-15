@@ -1,5 +1,5 @@
 
-= 개발자 도구에서 편집하기 (Edit as HTML, Console) =
+개발자 도구에서 편집하기 (Edit as HTML, Console)
 
 ```javascript
 document.getElementById('root');
@@ -7,7 +7,7 @@ document.getElementById('root');
 ```javascript
 document.getElementById('root').innerHTML = '<ul><li>바꾸었다</li></ul>';
 ```
-
+app.js 에서 편집하기
 ```javascript
 const ajax = new XMLHttpRequest();
 
