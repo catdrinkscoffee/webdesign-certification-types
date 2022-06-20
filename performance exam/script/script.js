@@ -5,14 +5,14 @@ $(document).ready(function () {
     var slideIndex = 0,
         slideLen = 3;
 
-    window.setInterval(function () {
-        if(slideIndex == slideLen) {
+    window.(function () {
+        if() {
             slideIndex = 0;
         }
         //좌,우 (왼쪽으로 얼마나 이동)
         var slidePosition = slideIndex * (-800) + "px";
 
-        $(".slide").animate({ left: slidePosition});
+        $(".slide").({ left: });
 
         slideIndex = slideIndex + 1;
     }, 3000);
@@ -21,12 +21,12 @@ $(document).ready(function () {
 
     $(".section--modal").hide();
 
-    $(".close-btn").click(function () {
-        $(".section--modal").toggle();
+    $("").click(function () {
+        $(".section--modal").();
     });
     
-    $(".modal-trigger").click(function () {
-        $(".section--modal").toggle();
+    $("").click(function () {
+        $(".section--modal").();
     });
 
 
