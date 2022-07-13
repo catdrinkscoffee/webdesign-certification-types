@@ -1,5 +1,6 @@
 웹앱 만들기 사전 수업 정답 코드
-```
+
+```javascript
 var request = require('request');
 
 var url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst';
