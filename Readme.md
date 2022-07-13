@@ -61,3 +61,50 @@ for(let i = 0 ; i < 10; i++) {
 document.getElementById('root').appendChild(ul);
 
 ```
+```
+var request = require('request');
+
+var url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst';
+var queryParams = '?' + encodeURIComponent('serviceKey') + '=lHBDTVwXz5Bc1fMZpp%2BeEYFkEfMt9Pyhhgq%2BnMO6IF4wW0lDFPdhT3JHb5EYX8JEJt9re1Nl3Vx%2BK1OlqMZ4sA%3D%3D'; /* Service Key*/
+queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /* */
+queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1000'); /* */
+queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /* */
+queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent('20220713'); /* */
+queryParams += '&' + encodeURIComponent('base_time') + '=' + encodeURIComponent('0500'); /* */
+queryParams += '&' + encodeURIComponent('nx') + '=' + encodeURIComponent('55'); /* */
+queryParams += '&' + encodeURIComponent('ny') + '=' + encodeURIComponent('127'); /* */
+
+request({
+    url: url + queryParams,
+    method: 'GET'
+}, function (error, response, body) {
+    // console.log('Reponse received', body, typeof(body));
+    // console.log('Reponse received, Parsed', JSON.parse(body), typeof(JSON.parse(body)));
+    const parsedBody = JSON.parse(body);
+    // console.log('Reponse received, response->body->items', parsedBody.response.body.items, typeof(parsedBody.response.body.items));
+    const weatherInfo = parsedBody.response.body.items;
+    const totalCount = parsedBody.response.body.totalCount;
+    // for(let i = 0; i < totalCount ; i++) {
+    //     console.log(i);
+    // }
+    // for(let i = 0; i < totalCount ; i++) {
+    //     if(weatherInfo.item[i].category === 'POP') {
+    //         console.log("I found it!");
+    //     }
+    // }
+    for(let i = 0; i < totalCount ; i++) {
+        if(weatherInfo.item[i].category === 'POP') {
+            // console.log("time: ", weatherInfo.item[i].fcstTime, "chance of rain: ", weatherInfo.item[i].fcstValue);
+            // console.log(tConvert(weatherInfo.item[i].fcstTime));
+            console.log("time:", tConvert(weatherInfo.item[i].fcstTime), "chance of rain:", weatherInfo.item[i].fcstValue);
+        }
+    }
+});
+
+const tConvert = function(preString) {
+    return preString.substring(0, 2) + "시" + preString.substring(2, 4) + "분";
+}
+
+// 오늘 날자를 Date()를 통해 받아온 다음, 다음날 날짜를 queryParameter로 넘겨주기.
+// 등교시간(09시 00분)을 기준으로 날짜 출력하기
+```
