@@ -6,6 +6,21 @@ lHBDTVwXz5Bc1fMZpp%2BeEYFkEfMt9Pyhhgq%2BnMO6IF4wW0lDFPdhT3JHb5EYX8JEJt9re1Nl3Vx%
 웹앱 만들기 수업 정답 코드
 
 ```javascript
+// 오류와 변경용이성을 대비한 정답
+let nowTime = new Date();
+let includeZeroNumArr = ['01', '02', '03', '04', '05', '06', '07', '08', '09'];
+let curFullYear = nowTime.getFullYear().toString();
+let curMonth = nowTime.getMonth() < 9 ? includeZeroNumArr[nowTime.getMonth()].toString() : (nowTime.getMonth() + 1).toString();
+let curDate = nowTime.getDate() < 9 ? includeZeroNumArr[nowTime.getDate() - 1].toString() : (nowTime.getDate()).toString();
+let nextDate = nowTime.getDate() < 9 ? includeZeroNumArr[nowTime.getDate() - 1].toString() : (nowTime.getDate() + 1).toString();
+
+const today = curFullYear + curMonth + curDate;
+const tomorrow = curFullYear + curMonth + nextDate;
+
+// 단순하게 생각한 정답
+// const today = curDate.getFullYear().toString() + '0' + (curDate.getUTCMonth() + 1).toString() + (curDate.getDate()).toString();
+// const tomorrow = curDate.getFullYear().toString() + '0' + (curDate.getUTCMonth() + 1).toString() + (curDate.getDate() + 1).toString();
+
 var request = require('request');
 
 var url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst';
@@ -13,7 +28,7 @@ var queryParams = '?' + encodeURIComponent('serviceKey') + '=lHBDTVwXz5Bc1fMZpp%
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /* */
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1000'); /* */
 queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /* */
-queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent('20220713'); /* */
+queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent(today); /* */
 queryParams += '&' + encodeURIComponent('base_time') + '=' + encodeURIComponent('0500'); /* */
 queryParams += '&' + encodeURIComponent('nx') + '=' + encodeURIComponent('55'); /* */
 queryParams += '&' + encodeURIComponent('ny') + '=' + encodeURIComponent('127'); /* */
@@ -22,28 +37,18 @@ request({
     url: url + queryParams,
     method: 'GET'
 }, function (error, response, body) {
-    // console.log('Reponse received', body, typeof(body));
-    // console.log('Reponse received, Parsed', JSON.parse(body), typeof(JSON.parse(body)));
-    const parsedBody = JSON.parse(body);
-    // console.log('Reponse received, response->body->items', parsedBody.response.body.items, typeof(parsedBody.response.body.items));
-    const weatherInfo = parsedBody.response.body.items;
-    const totalCount = parsedBody.response.body.totalCount;
-    // for(let i = 0; i < totalCount ; i++) {
-    //     console.log(i);
-    // }
-    // for(let i = 0; i < totalCount ; i++) {
-    //     if(weatherInfo.item[i].category === 'POP') {
-    //         console.log("I found it!");
-    //     }
-    // }
+    const weatherInfo = JSON.parse(body).response.body.items;
+    const totalCount = JSON.parse(body).response.body.totalCount;
     for(let i = 0; i < totalCount ; i++) {
-        if(weatherInfo.item[i].category === 'POP') {
-            // console.log("time: ", weatherInfo.item[i].fcstTime, "chance of rain: ", weatherInfo.item[i].fcstValue);
-            // console.log(tConvert(weatherInfo.item[i].fcstTime));
-            console.log("date:", weatherInfo.item[i].fcstDate,"time:", weatherInfo.item[i].fcstTime, "chance of rain:", weatherInfo.item[i].fcstValue);
+        if(weatherInfo.item[i].category === 'POP' && weatherInfo.item[i].fcstDate === tomorrow && weatherInfo.item[i].fcstTime == '0900') {
+            console.log("date:", "time:", weatherInfo.item[i].fcstDate, tConvert(weatherInfo.item[i].fcstTime), "chance of rain:", weatherInfo.item[i].fcstValue);
         }
     }
 });
+
+const tConvert = function(preString) {
+    return preString.substring(0, 2) + "시" + preString.substring(2, 4) + "분";
+}
 
 // 오늘 날자를 Date()를 통해 받아온 다음, 다음날 날짜를 queryParameter로 넘겨주기.
 // 등교시간(09시 00분)을 기준으로 날짜 출력하기
